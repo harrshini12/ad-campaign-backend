@@ -71,16 +71,12 @@ const Data = mongoose.model('Data', advertisingDataSchema);
 
 app.set('view engine', 'ejs');
 
+app.use(express.json())
+
 // Define endpoint for the home page
-app.get('/', (req, res) => {
-  Data.find({})
-    .then((data) => {
-      res.render('index', { data: data });
-    })
-    .catch((err) => {
-      res.status(500).send(err);
-    });
-});
+app.get('/', function(req, res) {
+  res.render('index')
+})
 
 // Define endpoint for getting all data
 app.get('/data', (req, res) => {
