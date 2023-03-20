@@ -2,7 +2,7 @@
   "name": "ad_perf_data_2022",
   "version": "1.0.0",
   "description": "This project aims to analyze 6-month performance data of advertising campaigns in 2022",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
