@@ -4,11 +4,12 @@ const mongoose = require('mongoose');
 const csv = require('csv-parser');
 const fs = require('fs');
 const cors = require('cors');
+require('dotenv').config();
 
 app.use(cors()); // enable CORS
 
 // Connect to MongoDB
-mongoose.connect('mongodb://0.0.0.0:27017/advertising_data', {
+mongoose.connect(process.env.MONGODB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
