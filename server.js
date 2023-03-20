@@ -69,6 +69,19 @@ const advertisingDataSchema = new mongoose.Schema({
 // Create a model for the data
 const Data = mongoose.model('Data', advertisingDataSchema);
 
+app.set('view engine', 'ejs');
+
+// Define endpoint for the home page
+app.get('/', (req, res) => {
+  Data.find({})
+    .then((data) => {
+      res.render('index', { data: data });
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+    });
+});
+
 // Define endpoint for getting all data
 app.get('/data', (req, res) => {
   Data.find({})
