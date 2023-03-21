@@ -8,6 +8,8 @@ require('dotenv').config();
 
 app.use(cors()); // enable CORS
 
+const PORT = process.env.PORT || 3000;
+
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URL, {
   useNewUrlParser: true,
@@ -180,6 +182,6 @@ app.get('/data/source/:source/target/:target/type/:type', (req, res) => {
 });
   
 // Start the server
-app.listen(3000, () => {
-  console.log('Server started on port 3000');
+app.listen(PORT, () => {
+  console.log(`Our app is running on port ${ PORT }`);
 });
