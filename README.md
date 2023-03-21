@@ -1,1 +1,3 @@
-# ad-campaign-backend - https://ad-campaign-backed.herokuapp.com/
+# ad-campaign-backend 
+
+Run the backend using npm start
